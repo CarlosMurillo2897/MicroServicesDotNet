@@ -34,7 +34,10 @@
         "ASPNETCORE_HTTP_PORTS": "8080"
       },
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": true,
+      // Windows VS: Defined once 'Docker file' debug it's running.
+      "httpPort": 5051,
+      "sslPort": 5050
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
