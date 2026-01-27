@@ -1,8 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using Catalog.API.Models;
-using Marten;
-
-namespace Catalog.API.Products.CreateProduct
+﻿namespace Catalog.API.Products.CreateProduct
 {
     public record CreateProductCommand(string Name, List<string> Category, string Description, string ImageFile, decimal Price)
         : ICommand<CreateProductResult>;
@@ -13,10 +9,6 @@ namespace Catalog.API.Products.CreateProduct
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
             // Create Product Entity from command object.
-            // Save to DB.
-
-
-            // Return result.
             var product = new Product
             {
                 Name = command.Name,
@@ -26,6 +18,11 @@ namespace Catalog.API.Products.CreateProduct
                 Price = command.Price
             };
 
+            // Save to DB.
+            session.Store(product);
+            await session.SaveChangesAsync(cancellationToken);
+
+            // Return result.
             return new CreateProductResult(product.Id);
         }
     }
