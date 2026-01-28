@@ -14,7 +14,7 @@
 
             if (product is null)
             {
-                throw new ProductNotFoundException();
+                throw new ProductNotFoundException(query.ID);
             }
 
             return new GetProductByIDResult(product);
