@@ -11,5 +11,6 @@ global using BuildingBlocks.CQRS;
 global using BuildingBlocks.Behaviors;
 
 // Project references.
+global using Basket.API.Data;
 global using Basket.API.Models;
 global using Basket.API.Exceptions;
