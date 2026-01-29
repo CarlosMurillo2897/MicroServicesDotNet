@@ -17,6 +17,7 @@
             })
             .WithName("GetBasket")
             .Produces<GetBasketResponse>(StatusCodes.Status200OK)
+            .ProducesProblem(StatusCodes.Status404NotFound)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithSummary("Get Basket Summary.")
             .WithDescription("Get Basket Description.");

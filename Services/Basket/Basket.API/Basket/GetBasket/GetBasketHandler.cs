@@ -10,7 +10,7 @@
         {
             var basket = await repository.GetBasket(request.UserName, cancellationToken);
 
-            return new GetBasketResult(new ShoppingCart("swn"));
+            return new GetBasketResult(basket);
         }
     }
 }
