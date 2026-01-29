@@ -5,6 +5,7 @@ global using Mapster;
 global using FluentValidation;
 
 // Building Blocks references.
+global using BuildingBlocks.Behaviors;
 global using BuildingBlocks.CQRS;
 
 // Project references.
