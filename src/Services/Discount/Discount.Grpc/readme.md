@@ -1,5 +1,3 @@
-# TODO: Define readme.
-
 ## 1. Architecture Style.
 
 TBD
